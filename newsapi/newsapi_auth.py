@@ -7,7 +7,9 @@ class NewsApiAuth(AuthBase):
         self.api_key = api_key
     
     def __call__(self, request):
-        request.headers.update(get_auth_headers(self.api_key))
+        request.headers.update(self.get_auth_headers(self.api_key))
+        return request
+
 
     def get_auth_headers(api_key):
         return {"Content-type" : "application/JSON", "Authorization" : api_key}
