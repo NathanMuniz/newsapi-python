@@ -1,2 +1,2 @@
 # newsapi-python
-This is a pratcting of how to use the newsapi. 
+This is a repository for practicing and understand of newsapi.
