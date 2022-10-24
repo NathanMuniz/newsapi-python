@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 import datetime
 import re
-import sys 
+import sys
 
 __all__ = ("sringify_date_param",)
 
@@ -31,7 +31,7 @@ def stringify_date_param(dt):
     elif isinstance(dt, datetime.date):
         return dt.strftime(DATE_FMT)
     elif is_valid_num(dt):
-        return datetime.datetime.utcfromtimestamp(dt).strftime(DATETIEM_FMT)
+    ver    return datetime.datetime.utcfromtimestamp(dt).strftime(DATETIEM_FMT)
     else:
         raise TypeError("Date input must be onf of:")
 
@@ -44,6 +44,12 @@ def validate_datetime_str(datetimestr):
         raise ValueError("Datetime input shoud be in format of...")
 
 
+PY2 = sys.version_info[0] == 2 
+PY3 = sys.version_info[0] == 3 
 
+if PY2:
+    def is_valid_string(var):
+        return isinstance(var, (basestring))
 
-
+elif py3 
+    
